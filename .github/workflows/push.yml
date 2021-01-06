@@ -70,13 +70,14 @@ jobs:
           cd go/src/github.com/${{github.repository}}
           make deps
 
-      - name: Running Go Test
+      - name: Running Go BDD Test
         run: |
           cd go/src/github.com/${{github.repository}}
           make test
 
       - name: Trivy Security Check
         run: |
+          cd go/src/github.com/${{github.repository}}
           wget https://github.com/aquasecurity/trivy/releases/download/v0.11.0/trivy_0.11.0_Linux-64bit.tar.gz
           tar zxvf trivy_0.11.0_Linux-64bit.tar.gz
           make security-checks   
