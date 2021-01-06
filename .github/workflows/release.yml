@@ -120,7 +120,7 @@ jobs:
       - name: Build Docker Image
         env:
           DOCKER_REPO: litmuschaos
-          DOCKER_IMAGE: go-runner
+          DOCKER_IMAGE: chaos-exporter
           DOCKER_TAG: ${RELEASE_TAG}
           DNAME: ${{ secrets.DNAME }}
           DPASS: ${{ secrets.DPASS }}
